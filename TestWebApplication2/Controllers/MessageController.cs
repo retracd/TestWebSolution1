@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SharedDependencies;
 
 namespace TestWebApplication2.Controller {
     [ApiController]
@@ -10,8 +11,8 @@ namespace TestWebApplication2.Controller {
         }
 
         [HttpPost]
-        public IActionResult PostMessage([FromBody] string message) {
-            return Ok($"Data from POST message received successfully: {message}");
+        public IActionResult PostMessage([FromBody] MessageData messageData) {
+            return Ok($"Data from POST message received successfully, Message: {messageData.Message}; Number: {messageData.Number}; Time: {messageData.Time}");
         }
     }
 }
