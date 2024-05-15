@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using SharedDependencies;
+using SharedDependencies.Models;
 
-namespace TestWebApplication2.Controller {
+namespace TestWebApplication2.Controller
+{
     [ApiController]
     [Route("[controller]")]
     public class MessageController : ControllerBase {
