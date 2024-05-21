@@ -41,5 +41,16 @@ namespace TestWebApplication2.Controller
             
             return Ok(data);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> PostTestData([FromBody] DbData newData) { 
+            if (newData == null) {
+                return BadRequest("Invalid Data");
+            }
+
+            _context.DbDatas.Add(newData);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetTestData), new { id = newData.id }, newData);
+        }
     }
 }
