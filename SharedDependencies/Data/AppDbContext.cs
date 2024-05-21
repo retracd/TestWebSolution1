@@ -9,7 +9,10 @@ using SharedDependencies.Models;
 namespace SharedDependencies.Data {
     public class AppDbContext : DbContext {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public DbSet<DbData> DbDatas { get; set; }
 
-        public DbSet<DbData>? DbDatas { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.Entity<DbData>().ToTable("test_table");
+        }
     }
 }
