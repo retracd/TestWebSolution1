@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using SharedDependencies.Models;
 
 namespace SharedDependencies.Data {
-    public class AppDbContext : DbContext {
+    public class AppDbContext : DbContext { // inherited/personalized DbContext class which mimics the data structure of the SQL table
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<DbData> DbDatas { get; set; }
 

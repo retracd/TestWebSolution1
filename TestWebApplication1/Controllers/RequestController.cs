@@ -18,12 +18,12 @@ namespace TestWebApplication1.Controller
             _clientFactory = clientFactory;
         }
 
-        [HttpGet]
+        [HttpGet] // *this* service is contacted via GET, but it contacts the 2nd web service via POST, as seen below
         public async Task<IActionResult> SendData()
         {
             var client = _clientFactory.CreateClient();
 
-            var messageData = new MessageData { 
+            var messageData = new MessageData { // random message data
                 Message = "Hello from TestWebApplication1", 
                 Number = 42,
                 Time = DateTimeOffset.Now
@@ -59,7 +59,7 @@ namespace TestWebApplication1.Controller
 
             if (response.IsSuccessStatusCode)
             {
-                var message = await response.Content.ReadAsStringAsync();
+                var message = await response.Content.ReadAsStringAsync(); // VVV complicated looking code, all it does is parse one of the JSON variables returned
                 return Ok($"Response from \"https://catfact.ninja/fact\" reads: {JsonDocument.Parse(message).RootElement.GetProperty("fact").GetString()}");
             }
             return StatusCode((int)response.StatusCode, "Failed to get a response from \"https://catfact.ninja/fact\"");
