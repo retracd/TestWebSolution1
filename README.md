@@ -1,6 +1,6 @@
 [![.NET](https://github.com/retracd/TestWebSolution1/actions/workflows/dotnet.yml/badge.svg)](https://github.com/retracd/TestWebSolution1/actions/workflows/dotnet.yml) [![CodeQL](https://github.com/retracd/TestWebSolution1/actions/workflows/codeql.yml/badge.svg)](https://github.com/retracd/TestWebSolution1/actions/workflows/codeql.yml)
 
-.NET mutli-webapp test environment for internal company project.
+.NET mutli-webapp test environment for internal company project. This project serves as suite of several test functions which will serve as the cornerstone for the future production project.
 
 The final project will ultimately have several services:
   1. Internet-facing webhook receiver - this service will allow incoming webhook data which alerts of changes in an SaaS employee database
