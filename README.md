@@ -1,5 +1,7 @@
 [![.NET](https://github.com/retracd/TestWebSolution1/actions/workflows/dotnet.yml/badge.svg)](https://github.com/retracd/TestWebSolution1/actions/workflows/dotnet.yml) [![CodeQL](https://github.com/retracd/TestWebSolution1/actions/workflows/codeql.yml/badge.svg)](https://github.com/retracd/TestWebSolution1/actions/workflows/codeql.yml)
 
+Production repo privated for security concerns.
+
 .NET mutli-webapp test environment for internal company project. This project serves as suite of several test functions which will serve as the cornerstone for the future production project.
 
 The final project will ultimately have several services:
